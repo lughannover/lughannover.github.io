@@ -1,7 +1,7 @@
 # Name of website
-title: My website
+title: Linux User Group Hannover
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: Aktuelle Termine, Themen und Veranstaltungen der Linux User Group Hannover.
 github: Homepage
 encoding: UTF-8
 kramdown:
