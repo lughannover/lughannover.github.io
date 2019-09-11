@@ -1,5 +1,5 @@
 ---
-title: 6 Gründe
+title: Warum Linux?
 layout: page
 permalink: /gruende/
 ---
