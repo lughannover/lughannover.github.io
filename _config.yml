@@ -2,7 +2,7 @@
 title: My website
 # Short description of your site
 description: A virtual proof that I'm awesome
-github: 
+github: Homepage
 encoding: UTF-8
 kramdown:
   input: GFM
