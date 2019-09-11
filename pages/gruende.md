@@ -1,3 +1,10 @@
+---
+title: This is my title
+layout: page
+---
+
+Here is my page.
+
 ## 6 Gründe, noch heute zu Linux zu wechseln
 
 Jeder kennt Windows, aber die wenigsten kennen Linux auf dem Desktop. Dabei benutzen 
