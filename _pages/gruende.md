@@ -1,11 +1,7 @@
 ---
-title: This is my title
+title: 6 Gründe, noch heute zu Linux zu wechseln
 layout: page
 ---
-
-Here is my page.
-
-## 6 Gründe, noch heute zu Linux zu wechseln
 
 Jeder kennt Windows, aber die wenigsten kennen Linux auf dem Desktop. Dabei benutzen 
 die meisten Linux schon heute, wenn auch unbewusst: Vom kleinsten Gerät bis zum 
