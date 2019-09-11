@@ -1,3 +1,9 @@
+---
+title: Impressum
+layout: page
+permalink: /impressum/
+---
+
 Inhaltlich Verantwortlicher gemäß Paragraph 10 Absatz 3 MDStV:
 
 Karsten Horsmann
