@@ -1,37 +1,50 @@
-## Welcome to GitHub Pages
+# Die neue Homepage der Linux User Group Hannover
 
-You can use the [editor on GitHub](https://github.com/lughannover/lughannover.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Die neue Homepage der LUG Hannover wurde mit GitLab Pages und Jekyll, einem Website 
+Generator für statische HTML-Webseiten, erstellt.
+Die fertige Seite selbst findest du hier: [lughannover.gitlab.io](https://lughannover.gitlab.io/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Wie funktioniert diese Seite?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Unter *_includes* sind HTML-Dateien für den Header und den Footer der Seite. 
+Der Inhalt, der auf der Homepage in Footer und Header angezeigt werden, ändert man
+allerdings in der Datei  *_config.yml* im Hauptverzeichnis.
 
-```markdown
-Syntax highlighted code block
+Unter *_layouts* sind die HTML-Templates für die Webseite hinterlegt. Dabei ist
+*index.html* das Template für die Hauptseite, *default.html* für alle Unterseiten,
+die von *default.html* "erben", wie z.B. *page.html*. Das Template *index.html* 
+enthält als Besonderheit den JavaScript-Code, um den ersten Mittwoch im Monat zu 
+berechnen.
 
-# Header 1
-## Header 2
-### Header 3
+Unter *_pages* wird der Inhalt der Website in Markup-Dateien abgelegt (.md). Die 
+*index.md* enhält den Text der Startseite. Die Datei *6 Gründe für Linux.md* 
+enthält den Text der Unterseite **6 Gründe für Linux**. 
 
-- Bulleted
-- List
+Es können weitere Unterseiten erstellt werden. Wichtig sind dann die Angaben im Kopf 
+der Markup-Datei: 
 
-1. Numbered
-2. List
+* layout: page 
+* title: Warum Linux?
+* permalink: /gruende/
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+Das Layout der Seite kommt von *_layouts/page.html*, dann folgt der Titel der 
+Seite und als 3. der Link, unter dem die Seite erreichbar sein soll, hier 
+[*/gruende/*](https://lughannover.gitlab.io/gruende/).
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## Was muss ich beachten?
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lughannover/lughannover.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Das LayOut der Seite wird in den HTML-Templates und durch das CSS geändert, das aus 
+SASS-Dateien besteht, die man unter *_sass* und *css* findet (.scss). Will man am 
+LayOut der Website nichts ändern, muss hier nichts weiter beachtet werden.
 
-### Support or Contact
+Unter *downloads* kann man alles zum Download ablegen, was für Menschen außerhalb 
+der LUG evtl. auch interessant wäre.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Unter *img* sind Bilder und Grafiken der LUG zu finden.
+
+Unter *js* werden JavaScript-Dateien der Website gespeichert:
+
+* *ErsterMittwochImMonat.js* -- Errechnet den 1. Mittwoch im Monat, der kein Feiertag ist, und an dem unser Treffen stattfindet.
