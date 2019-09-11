@@ -1,4 +1,1 @@
 theme: jekyll-theme-minimal
-baseurl: "" # Der Pfad zur Seite, z.B. /blog
-url: "/" # Der Hostname oder Wurzelverzeichnis der Website
-include: ['pages']
