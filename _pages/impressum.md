@@ -10,12 +10,9 @@ Karsten   | Horsmann
 :-------- | :-------------- 
 Bennostr. | 14         
 30451     | Hannover 
-Tel:      | +49 163 1745797 (keine Ferndiagnose!)
-Fax:      | +49 1212 517063154 
-Mail:     | witchdoc <ät> netzwech.de 
-Kontakt   | **Xing/OpenBC** 
+Mail:     | witchdoc <ät> netzwech.de  
 
-Diese Daten dienen der Kontaktaufnahme bei technischen Problemen. Allerdings bin ich nicht der Computer-ADAC oder der ehrenamtliche Pinguin-Retter. Danke. 
+Diese Daten dienen der Kontaktaufnahme bei technischen Problemen mit der Seite. Aufgrund der begrenzten Zeit kann ich keine Linux Fernadministration leisten. 
 
 
 
