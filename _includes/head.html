@@ -5,10 +5,15 @@
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
+  <meta name="author" content="Karsten Horsmann, Christian Imhorst">
+  <meta name="keywords" content="Open Source, GNU, Linux, Freie Software, Hannover, LUG, Linux User Group">
+  <meta name="robots" content="all">
+  <meta http-equiv="content-language" content="de">
+  
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="me" href="https://mastodon.social/@datenteiler">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 </head>
