@@ -20,3 +20,7 @@ theme: jekyll-theme-minimal
 gfm_quirks: paragraph_end
 
 include: ['_pages']
+
+plugins:
+  - jekyll-sitemap
+  
