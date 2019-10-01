@@ -59,6 +59,6 @@ var monat = datumTreffen.getMonth();
 var tag = datumTreffen.getDate();
 
 out += 'Das n&auml;chste Treffen ist am <b>Mittwoch, den ' + (("0" + tag).slice(-2)) + '.' +
-    ("0" + (monat + 1)).slice(-2) + '.' + jahr + '</b>';
+    ("0" + (monat + 1)).slice(-2) + '.' + jahr + ' um 19 Uhr</b>';
 
 document.getElementById("datumTreffen").innerHTML = out;
