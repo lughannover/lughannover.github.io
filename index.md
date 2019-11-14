@@ -29,5 +29,5 @@ alltagstauglichen Einstieg in Linux und der Welt der Freien Software zu geben. E
 Da-Sein und Sich-ausfragen-Lassen von interessierten Menschen. Wir freuen uns auf deinen Besuch. 
 
 Mehr Infos unter: [kurzelinks.de/basar](https://kurzelinks.de/basar)
-
+ 
 Das nächste reguläre Treffen ist dann am Mittwoch danach:
