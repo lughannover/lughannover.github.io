@@ -29,7 +29,7 @@ Sub ProtokollLUGH
 	"====================================" & chr(13) & chr(13) & _
 	"Teilgenommen: " & sTeilnehmer & ", davon neu: " & sNeu & chr(13) & chr(13) & _
 	"0. Wie halte ich Kontakt zur LUG-Hannover:" & chr(13) & chr(13) & _
-	chr(9) & "Maillingliste: " & "http:" & chr(47) & chr(47) & "www" & chr(46) & "han" & ".de" & chr(47) & "mailman" & chr(47) & "listinfo" & chr(47) & "lugh" & chr(13) & chr(13) & _
+	chr(9) & "Mailingliste: " & "http:" & chr(47) & chr(47) & "www" & chr(46) & "han" & ".de" & chr(47) & "mailman" & chr(47) & "listinfo" & chr(47) & "lugh" & chr(13) & chr(13) & _
 	chr(9) & "Twitter: @lughannover" & chr(13) & chr(13) & _
 	"Wir sammeln erst mal alle Punkte, bevor wir beginnen:" & chr(13) & chr(13) & _
 	"1." & chr(13) & chr(13) & _
