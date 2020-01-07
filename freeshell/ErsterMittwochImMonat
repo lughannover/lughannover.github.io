@@ -91,7 +91,7 @@ month = int(sys.argv[2])
 termin = LUGH_Termine(year, month)
 
 # Prüfe anhand der Datei ~/.lughdate, ob der Termin schon gelaufen ist:
-file = open("/home/l/lughvr/.lughdate").readlines()
+file = open("~/.lughdate").readlines()
 last = file[0].rstrip('\n')
 termin1 = file[1].rstrip('\n')
 today = '%s%s%s' % (date.today().strftime("%Y"), date.today().strftime("%m"), date.today().strftime("%d"))
@@ -109,13 +109,13 @@ else:
         # Wenn der Termin der LUGH schon war, schreibe den nächsten Termin...
         print ("%s. %s %s" % (termin[0], termin[1], termin[2]))
         # ... auch in die Datei ~/.lughdate
-        file = open("/home/l/lughvr/.lughdate","w")
+        file = open("~/.lughdate","w")
         file.write(next+"\n")
         file.write("%s. %s %s\n" % (termin[0], termin[1], termin[2]))
         file.close()
 
         # Schreibe das Datum in eine JS-Datei für die Webseite:
-        jsfile = open("/home/l/lughvr/public_html/termin.js","w")
+        jsfile = open("~/public_html/termin.js","w")
         jsfile.write("var out = '';\n")
 	jsfile.write("out += 'Das n&auml;chste Treffen ist am <b>Mittwoch, den %s. %s %s um 19 Uhr</b>.';\n" % (termin[0], termin[1], termin[2]))
         jsfile.write("document.getElementById('datumTreffen').innerHTML = out;\n")
