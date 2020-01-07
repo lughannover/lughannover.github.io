@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+NMON=$(date -d "$(date +%Y-%m-1) 1 month" +%m)
+YEAR=$(date -d "$(date +%Y-%m-1) 1 month" +%Y)
+
+
+cat << EOF > $HOME/public_html/Einladung.txt
+Hallo!
+
+Es trifft sich die
+
+=================================================
+L i n u x   U s e r   G r o u p   H a n n o v e r
+=================================================
+
+an jedem ersten Mittwoch im Monat. Das nächste Mal am
+
+Mittwoch, $(/home/l/lughvr/bin/ErsterMittwochImMonat $YEAR $NMON), um 19:00 Uhr (st)
+
+Seminarraum des RRZN
+Schlosswender Strasse 5
+30159 Hannover
+
+Wegbeschreibung:
+
+Mit der U-Bahn (Linien 4 & 5) zum Königsworther Platz
+Zu Fuss weiter in Richtung Norden (Christuskirche)
+Nach ca. 150m links durch die Toreinfahrt
+Links über den Parkplatz
+Die grosse Treppe hoch ins Gebäude
+Den Gang rechts entlang runter bis zum Ende
+Durch die Tür auf der linken Seite
+Und da sind wir dann.
+
+Theoretisch lässt der Pförtner nach 19:00 Uhr niemanden mehr rein.
+Wenn's trotzdem nicht klappt, müsst Ihr aber nicht unverrichteter
+Dinge wieder umdrehen, sondern könnt gleich zum nächsten Punkt
+übergehen:
+
+Ab 21:00 Uhr (ct) Essen, Trinken, Fachsimpeln etc. in der Gaststätte
+Kaiser, Ecke Schneiderberg/Schaufelder Strasse.
+
+--
+Viele Grüße
+Eure LUG Hannover
+
+https://lug-hannover.de/ - Mitmachen erwünscht!
+@lughannover             - Twitter
+EOF
