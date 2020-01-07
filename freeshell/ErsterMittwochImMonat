@@ -1,0 +1,123 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+from datetime import date
+import calendar
+import sys
+
+### Benötigte Funktionen ###
+def help():
+    help = """
+Beispiel im Terminal:
+   
+    $ ./ErsterMittwochImMonat 2020 01
+      01. Januar 2020
+
+Optionen:
+    jahr monat     -- Das Datum des nächsten Termins anzeigen: ./ErsterMittwochImMonat 2020 01
+                      Das neue Datum wird aber erst angezeigt, wenn der Termin des aktuellen 
+                      Monats schon Vergangenheit ist
+    
+    jahr monat -m  -- Um sich die kommenden Termine gleich anzeigen zu lassen, also ohne Prüfung
+                      auf den aktuellen Termin, nimmt man die Option -m dazu:
+
+                      $ ./ErsterMittwochImMonat 2020 01 -m
+                        08.01.2020
+"""
+    return help
+
+def first_wednesday(year, month):
+    # Die Funktion ermittelt den ersten Mittwoch eines Monats
+    # und gibt den Monatsnamen und den Tag als Zahl zurück.
+    mycal = calendar.monthcalendar(year, month)
+    week1 = mycal[0]
+    week2 = mycal[1]
+    if week1[calendar.WEDNESDAY] != 0:
+        wednesday = week1[calendar.WEDNESDAY]
+    else:
+        wednesday = week2[calendar.WEDNESDAY]
+
+    monthname = calendar.month_name[month]
+    return wednesday, monthname
+
+def LUGH_Termine(year, month):
+    # Die Funktion ermittelt die Treffen der LUG Hannover
+    # mit Hilfe der Funktion first_wednesday()
+    lugh_termin = first_wednesday(year, month)
+    day = lugh_termin[0]
+    mon = lugh_termin[1]
+
+    # Da first_wednesday() den Monatsnamen auf Englisch zurück gibt
+    # und die Lokalisierung auf dem Zielsystem unklar ist, wir übersetzt:
+    if mon == 'January':
+        mon = 'Januar'
+    elif mon == 'February':
+        mon = 'Februar'
+    elif mon == 'March':
+        mon = 'März'
+    elif mon == 'May':
+        mon = 'Mai'
+    elif mon == 'June':
+        mon = 'Juni'
+    elif mon == 'July':
+        mon = 'Juli'
+    elif mon == 'October':
+        mon = 'Oktober'
+    elif mon == 'December':
+        mon = 'Dezember'
+
+    # Feiertage, die uns betreffen können, sind 01.01., 01.05., 03.10.
+    # Fällt der Termin auf einen Feiertag werden +7 Tage dazu gerechnet:
+    if day == 1 and mon == 'Januar':
+        day = day + 7
+    elif day == 1 and mon == 'Mai':
+        day = day + 7
+    elif day == 3 and mon == 'Oktober':
+        day = day + 7
+
+    return str(day).zfill(2), mon, year, str(month).zfill(2)
+
+### Hauptprogramm ###
+
+# Wenn weniger als 2 Argumente, zeige die Hilfe an:
+if len(sys.argv) < 3:
+    print(help())
+    quit()
+
+# Parameterübergabe
+year = int(sys.argv[1])
+month = int(sys.argv[2])
+
+# Der nächste Termin wird ermittelt:
+termin = LUGH_Termine(year, month)
+
+# Prüfe anhand der Datei ~/.lughdate, ob der Termin schon gelaufen ist:
+file = open("/home/l/lughvr/.lughdate").readlines()
+last = file[0].rstrip('\n')
+termin1 = file[1].rstrip('\n')
+today = '%s%s%s' % (date.today().strftime("%Y"), date.today().strftime("%m"), date.today().strftime("%d"))
+next = '%s%s%s' % (termin[2], termin[0], termin[3])
+
+# Gebe den nächsten Termin ohne Prüfung aus, ob der Termin in dem Monat schon gelaufen ist: 
+if len(sys.argv) > 3 and sys.argv[3] == '-m':
+    print ("%s.%s.%s" % (termin[0], termin[3], termin[2]))
+else:
+    # Wenn das Datum heute kleiner ist, als dass aus der Datei ~/.lughdate,
+    # dann war der Termin noch nicht. Dann hole den Termin aus der Datei:
+    if int(today) < int(last):
+        print (termin1)
+    else:
+        # Wenn der Termin der LUGH schon war, schreibe den nächsten Termin...
+        print ("%s. %s %s" % (termin[0], termin[1], termin[2]))
+        # ... auch in die Datei ~/.lughdate
+        file = open("/home/l/lughvr/.lughdate","w")
+        file.write(next+"\n")
+        file.write("%s. %s %s\n" % (termin[0], termin[1], termin[2]))
+        file.close()
+
+        # Schreibe das Datum in eine JS-Datei für die Webseite:
+        jsfile = open("/home/l/lughvr/public_html/termin.js","w")
+        jsfile.write("var out = '';\n")
+	jsfile.write("out += 'Das n&auml;chste Treffen ist am <b>Mittwoch, den %s. %s %s um 19 Uhr</b>.';\n" % (termin[0], termin[1], termin[2]))
+        jsfile.write("document.getElementById('datumTreffen').innerHTML = out;\n")
+        jsfile.close()
+
