@@ -25,4 +25,4 @@ Das Pythonskript wird aufgerufen von der Datei
 
 ## lugh
 
-Mit dem Bash-Skript *lugh* wird der Einladungstext nach "~/public_html/Einladung.txt" geschrieben, der dann mit dem *mail*-Befehl von Postfix an die Maillingliste verschickt wird. *lugh* wird von *cron* täglich aufgerufen, das Skript, um die Einladung mit Postfix zu verschicken monatlich.
+Mit dem Bash-Skript *lugh* wird der Einladungstext nach "~/public_html/Einladung.txt" geschrieben, der dann mit dem *mail*-Befehl von Postfix an die Maillingliste verschickt wird. *lugh* wird von *cron* täglich aufgerufen, das Skript, um die Einladung mit Postfix zu verschicken, monatlich.
