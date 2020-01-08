@@ -18,7 +18,6 @@ future: true
 jailed: false
 theme: jekyll-theme-minimal
 gfm_quirks: paragraph_end
-
 include: ['_pages']
 
 plugins:
