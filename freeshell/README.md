@@ -1,6 +1,6 @@
-## Verzeichnis mit Skripten in der FreeShell ##
+# Verzeichnis mit Skripten in der FreeShell #
 
-# ErsterMittwochImMonat
+## ErsterMittwochImMonat
 Python-Skript, das den 1. Mittwoch eines Monats errechnet, wenn der nicht auf einen Feiertag fällt. Dann werden 7 Tage zum Datum des 1. Mittwoch hinzugerechnet.
 
 Als Parameter werden dem Skript Jahr und Monat übergeben. Der 1. Mittwoch im Januar 2020 war der 08. Januar 2020:
@@ -21,6 +21,6 @@ Außerdem erstellt das Skript eine JavaScript-Datei mit dem nächsten LUG-Termin
 
 Das Pythonskript wird aufgerufen von der Datei
 
-# lugh
+## lugh
 
 Mit dem Bash-Skript *lugh* wird der Einladungstext nach "~/public_html/Einladung.txt" geschrieben, der dann mit dem *mail*-Befehl von Postfix an die Maillingliste verschickt wird. *lugh* wird von *cron* täglich aufgerufen, das Skript, um die Einladung mit Postfix zu verschicken monatlich.
