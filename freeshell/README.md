@@ -1,6 +1,6 @@
 # Verzeichnis mit Skripten in der FreeShell #
 
-Mit den folgenden Skripten, die in einer FreeShell laufen, werden unsere nächsten Termine und Konfigurationsdateien für die Homepage und den Mailversand der Einladungsmail über unsere Maillingliste.
+Mit den folgenden Skripten, die in der [FreeShell](https://FreeShell.de.com) laufen, werden unsere nächsten Termine und Konfigurationsdateien für die Homepage und den Mailversand der Einladungsmail über unsere Maillingliste.
 
 ## ErsterMittwochImMonat
 Python-Skript, das den 1. Mittwoch eines Monats errechnet, wenn der nicht auf einen Feiertag fällt. Dann werden 7 Tage zum Datum des 1. Mittwoch hinzugerechnet.
