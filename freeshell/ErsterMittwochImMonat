@@ -103,7 +103,7 @@ if len(sys.argv) > 3 and sys.argv[3] == '-m':
 else:
     # Wenn das Datum heute kleiner ist, als dass aus der Datei ~/.lughdate,
     # dann war der Termin noch nicht. Dann hole den Termin aus der Datei:
-    if int(today) < int(last):
+    if int(today) > int(last):
         print (termin1)
     else:
         # Wenn der Termin der LUGH schon war, schreibe den nächsten Termin...
