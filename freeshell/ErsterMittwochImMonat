@@ -8,7 +8,7 @@ import sys
 def help():
     help = """
 Beispiel im Terminal:
-   
+
     $ ./ErsterMittwochImMonat 2020 01
       01. Januar 2020
 
@@ -16,7 +16,7 @@ Optionen:
     jahr monat     -- Das Datum des nächsten Termins anzeigen: ./ErsterMittwochImMonat 2020 01
                       Das neue Datum wird aber erst angezeigt, wenn der Termin des aktuellen 
                       Monats schon Vergangenheit ist
-    
+
     jahr monat -m  -- Um sich die kommenden Termine gleich anzeigen zu lassen, also ohne Prüfung
                       auf den aktuellen Termin, nimmt man die Option -m dazu:
 
@@ -78,6 +78,14 @@ def LUGH_Termine(year, month):
 
 ### Hauptprogramm ###
 
+# Schreibe das Datum in eine JS-Datei für die Webseite:
+def SchreibeJS_Datei(curtermin):
+    jsfile = open("~/public_html/termin.js","w")
+    jsfile.write("var out = '';\n")
+    jsfile.write("out += 'Das n&auml;chste Treffen ist am <b>Mittwoch, den %s um 19 Uhr</b>.';\n" % (curtermin))
+    jsfile.write("document.getElementById('datumTreffen').innerHTML = out;\n")
+    jsfile.close()
+
 # Wenn weniger als 2 Argumente, zeige die Hilfe an:
 if len(sys.argv) < 3:
     print(help())
@@ -90,34 +98,36 @@ month = int(sys.argv[2])
 # Der nächste Termin wird ermittelt:
 termin = LUGH_Termine(year, month)
 
-# Prüfe anhand der Datei ~/.lughdate, ob der Termin schon gelaufen ist:
-file = open("~/.lughdate").readlines()
-last = file[0].rstrip('\n')
-termin1 = file[1].rstrip('\n')
-today = '%s%s%s' % (date.today().strftime("%Y"), date.today().strftime("%m"), date.today().strftime("%d"))
-next = '%s%s%s' % (termin[2], termin[0], termin[3])
-
 # Gebe den nächsten Termin ohne Prüfung aus, ob der Termin in dem Monat schon gelaufen ist: 
 if len(sys.argv) > 3 and sys.argv[3] == '-m':
     print ("%s.%s.%s" % (termin[0], termin[3], termin[2]))
+    quit()
+
+# Hilfsdatei .lughdate erstellen, um den neuen Termin der LUGH erst dann zu ermitteln,
+# wenn der aktuelle Termin schon vorbei ist:
+file = open("~/.lughdate").readlines()
+curtermin = file[0].rstrip('\n')
+numtermin = file[1].rstrip('\n')
+numtoday = '%s%s%s' % (date.today().strftime("%Y"), date.today().strftime("%m"), date.today().strftime("%d"))
+
+# Wenn das Datum heute kleiner ist, als dass aus der Datei ~/.lughdate,
+# dann war der Termin noch nicht.
+if int(numtoday) <= int(numtermin):
+    print (curtermin)
+
+    # Schreibe die JS_Datei für die Homepage:  
+    SchreibeJS_Datei(curtermin)
 else:
-    # Wenn das Datum heute kleiner ist, als dass aus der Datei ~/.lughdate,
-    # dann war der Termin noch nicht. Dann hole den Termin aus der Datei:
-    if int(today) > int(last):
-        print (termin1)
-    else:
-        # Wenn der Termin der LUGH schon war, schreibe den nächsten Termin...
-        print ("%s. %s %s" % (termin[0], termin[1], termin[2]))
-        # ... auch in die Datei ~/.lughdate
-        file = open("~/.lughdate","w")
-        file.write(next+"\n")
-        file.write("%s. %s %s\n" % (termin[0], termin[1], termin[2]))
-        file.close()
+    print("%s. %s %s" % (termin[0], termin[1], termin[2]))
 
-        # Schreibe das Datum in eine JS-Datei für die Webseite:
-        jsfile = open("~/public_html/termin.js","w")
-        jsfile.write("var out = '';\n")
-	jsfile.write("out += 'Das n&auml;chste Treffen ist am <b>Mittwoch, den %s. %s %s um 19 Uhr</b>.';\n" % (termin[0], termin[1], termin[2]))
-        jsfile.write("document.getElementById('datumTreffen').innerHTML = out;\n")
-        jsfile.close()
+    curtermin = "%s. %s %s" % (termin[0], termin[1], termin[2])
+    numtermin = "%s%s%s" % (termin[2], termin[3], termin[0])
 
+    # Ansonsten schreibe die neuen Daten in die Datei ~/.lughdate
+    file = open("~/.lughdate","w")
+    file.write(curtermin+"\n")
+    file.write(numtermin+"\n")
+    file.close()
+
+    # Schreibe die JS_Datei für die Homepage:   
+    SchreibeJS_Datei(curtermin)
