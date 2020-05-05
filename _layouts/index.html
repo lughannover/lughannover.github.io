@@ -11,14 +11,39 @@
       <div class="wrapper">
         {{ content }}
         
+        <script type="text/javascript" language="javascript"><!--
+function lugh(a,t,c,d,m) {
+ t = a || new Date();                           // Datum übernehmen
+ t.setDate(1);                                  // Erster Tag im Monat
+ t.setMinutes(0);                               // Minuten auf 0
+ t.setHours(21);                                // Stunden auf 21
+ t.setDate(d = (11-t.getDay())%7);              // Erster Mittwoch im Monat
+ m = t.getMonth();                              // Monat ermitteln
+ c = d * 10 + m;                                // Tag und Monat kombinieren
+ if(c == 10 || c == 14 || c == 39)              // Erster Mittwoch ein Feiertag?
+  t.setDate(d + 7);                             // Eine Woche dazu rechnen
+ if(!a && t.getTime() < new Date().getTime()) { // Termin schon verstrichen?
+  t.setDate(1);                                 // Datum wieder auf den 1.
+  if(!(c = ++m % 12))                           // Nächster Monat
+   t.setFullYear(t.getFullYear() + 1);          // Nächstes Jahr setzen
+  t.setMonth(c);                                // Monat setzen
+  t = lugh(t);                                  // Nächsten Termin berechnen
+ }
+ return t;                                      // Date-Object zurückgeben
+}
+var t = lugh();    // t.toLocaleDateString() würde reichen
+document.write("<p>Nächstes Treffen: <b>Mittwoch, den " + t.getDate() + ". " +
+"Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(",")[t.getMonth()] + " " + t.getFullYear() + ", 19 Uhr.<\/b><\/p>");
+//--></script>
+        <noscript>
         <p class="lughdate"><em>Sollte hier kein Termin oder nur Kauderwelsch stehen, dann <a href="https://freeshell.de/~lughvr/einladung.cgi">klick bitte auf unsere Einladung!</a><br></em> 
         <font color="white">
         <span class="termin">N&auml;chstes Treffen:</span> <strong>Mittwoch, den 
-        <span class='day'><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b></span>.
+        <span class='day'><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>10</b></span>.
         <span class='month'><b>Januar</b><b>Februar</b><b>M&auml;rz</b><b>April</b><b>Mai</b><b>Juni</b><b>Juli</b><b>August</b><b>September</b><b>Oktober</b><b>November</b><b>Dezember</b></span>
         20<span class='decade'><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></span><span class='year'><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b></span>, 19 Uhr.</strong>
         </font></p>
-        
+        </noscript>
       </div>
     </div>
 
