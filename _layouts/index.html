@@ -16,8 +16,8 @@ function lugh(a,t,c,d,m) {
  t = a || new Date();                           // Datum übernehmen
  t.setDate(1);                                  // Erster Tag im Monat
  t.setMinutes(0);                               // Minuten auf 0
- t.setHours(21);                                // Stunden auf 21
- t.setDate(d = (11-t.getDay())%7);              // Erster Mittwoch im Monat
+ t.setHours(21);                                // Stunden auf 21              
+ t.setDate(d = (10-t.getDay())%7+1);            // Erster Mittwoch im Monat
  m = t.getMonth();                              // Monat ermitteln
  c = d * 10 + m;                                // Tag und Monat kombinieren
  if(c == 10 || c == 14 || c == 39)              // Erster Mittwoch ein Feiertag?
