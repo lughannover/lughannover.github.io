@@ -1,0 +1,19 @@
+#!/bin/bash
+printf "*** Einmaleins üben (Beenden mit STRG+C) ***\n"
+while [[ 1 ]]
+do
+  A=$(( ( RANDOM % 10 )  + 1 ))
+  B=$(( ( RANDOM % 10 )  + 1 ))
+
+  ERG1=$(($A*$B))
+  ERG2=0
+  while [[ $ERG1 != $ERG2 ]]
+  do
+    printf "$A * $B = "
+    read -r ERG2
+  done
+  printf 'Richtig!\n'
+  if [ -x "$(which espeak)" ]; then
+    espeak -vmb-de5 -b1 -a 200 'Super!' &>/dev/null
+  fi
+done
