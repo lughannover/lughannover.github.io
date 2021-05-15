@@ -6,16 +6,6 @@ permalink: /
 
 # {{ page.title }}
 
-
-**Triff uns** am Sonnabend, 15.05.2021 von 14 bis 17 Uhr **online** auf dem Linux Presentation Day (LPD)!
-
-Wir habe einen "Meet-Channel", auf dem wir ohne Programm unsere LUG vorstellen 
-und gemeinsam mit euch über Linux und unsere monatlichen Treffen schnacken können.
-Kommt zuhauf!
-
-Weitere Infos: [l-p-d.org/fahrplan#8735](https://l-p-d.org/fahrplan#8735)
-
-
 Die Linux User Group (LUG) Hannover existiert seit März 1993 als ein loser 
 Zusammenschluss von Leuten, die Interesse an Gnu/Linux haben. Dabei wollen wir 
 andere an unserem Wissen teilhaben lassen und selbst weiterlernen.
