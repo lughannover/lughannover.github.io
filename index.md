@@ -12,7 +12,7 @@ andere an unserem Wissen teilhaben lassen und selbst weiterlernen.
 
 Wir sind eine offene Gruppe und bei uns sind alle willkommen, die
 
-* Interesse an Linux haben, oder
+* Interesse an GNU/Linux haben, oder
 * das System einmal ausprobieren möchten, oder
 * Hilfe bei der Installation benötigen,
 * ihr Wissen weitergeben und
