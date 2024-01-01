@@ -22,4 +22,4 @@ Wir treffen uns in lockerer Runde jeden ersten Mittwoch im Monat, um 19 Uhr, im 
 
 Weitere Infos findet ihr in unserer [Einladung zum Treffen](https://freeshell.de/~lughvr/einladung.cgi).
 
-<p style="color:red;"> Da die LUH mehr oder weniger bis einschließlich 7. Januar aufgrund von Energissparen "geschlossen" sein wird, findet unser Termin im Januar vermutlich nicht statt.</p>
+<p style="color:red;"> Da die LUH mehr oder weniger bis einschließlich 7. Januar aufgrund von Energiesparen "geschlossen" sein wird, findet unser Termin im Januar vermutlich nicht statt.</p>
