@@ -32,8 +32,8 @@ function lugh(a,t,c,d,m) {
  return t;                                      // Date-Object zurückgeben
 }
 var t = lugh();    // t.toLocaleDateString() würde reichen
-document.write("<p>Nächstes Treffen: <b>Mittwoch, den 07. Februar 2024</p>"); 
-// document.write("<p>Nächstes Treffen: <b>Mittwoch, den " + t.getDate() + ". " + "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(",")[t.getMonth()] + " " + t.getFullYear() + ", 19 Uhr.<\/b><\/p>");
+// document.write("<p>Nächstes Treffen: <b>Mittwoch, den 07. Februar 2024</p>"); 
+document.write("<p>Nächstes Treffen: <b>Mittwoch, den " + t.getDate() + ". " + "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(",")[t.getMonth()] + " " + t.getFullYear() + ", 19 Uhr.<\/b><\/p>");
 //--></script>
         <noscript>
         <p class="lughdate"><em>Sollte hier kein Termin oder nur Kauderwelsch stehen, dann <a href="https://freeshell.de/~lughvr/einladung.cgi">klick bitte auf unsere Einladung!</a><br></em> 
@@ -48,7 +48,5 @@ document.write("<p>Nächstes Treffen: <b>Mittwoch, den 07. Februar 2024</p>");
     </div>
 
     {% include footer.html %}
-
   </body>
-
 </html>
