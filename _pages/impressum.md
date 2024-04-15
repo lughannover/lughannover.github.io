@@ -15,8 +15,8 @@ Karsten      | Horsmann
 :----------- | :-------------- 
 Lübecker Str | 12         
 30974        | Wennigsen 
-Mail:        | khorsmann+lugh <ät> gmail <dot> com  
-
+Mail:        | khorsmann+lugh <ät> gmail \<dot> com  
+Hinweis      | Das <ät> durch den Klammeraffen ersetzen, den \<dot> zum Punkt. khorsmann+lugh ist wirklich korrekt.
 
 Diese Daten dienen der Kontaktaufnahme bei technischen Problemen mit der Seite. Aufgrund der begrenzten Zeit kann keine Linux-Fernadministration geleistet werden. 
 
