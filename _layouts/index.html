@@ -19,8 +19,8 @@ function lugh(a,t,c,d,m) {
  t.setHours(21);                                // Stunden auf 21              
  t.setDate(d = (10-t.getDay())%7+1);            // Erster Mittwoch im Monat
  m = t.getMonth();                              // Monat ermitteln
- c = d * 10 + m;                                // Tag und Monat kombinieren
- if(c == 10 || c == 14 || c == 39)              // Erster Mittwoch ein Feiertag?
+ c = m * 10 + d % 8;                            // Tag und Monat kombinieren
+ if(c < 8 || c == 41 || c == 93)                // Erster Mittwoch ein Feiertag?
   t.setDate(d + 7);                             // Eine Woche dazu rechnen
  if(!a && t.getTime() < new Date().getTime()) { // Termin schon verstrichen?
   t.setDate(1);                                 // Datum wieder auf den 1.
