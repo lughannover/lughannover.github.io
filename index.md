@@ -4,7 +4,8 @@ title: Wer wir sind
 permalink: /
 ---
 
-# Linux-Erlebnistag Hannover – Freiheit für deinen Computer!
+# Linux-Erlebnistag Hannover
+## Freiheit für deinen Computer! Privatsphäre für dich.
 
 Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Profi bist – beim Linux-Erlebnistag Hannover kannst du ausprobieren, lernen und die LUG Hannover treffen.
 
