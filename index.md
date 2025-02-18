@@ -4,6 +4,15 @@ title: Wer wir sind
 permalink: /
 ---
 
+# Linux-Erlebnistag Hannover – Freiheit für deinen Computer!
+
+Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Profi bist – beim Linux-Erlebnistag Hannover kannst du ausprobieren, lernen und die LUG Hannover treffen.
+
+Wann? 20.09.2025 – jetzt schon vormerken!
+Wo? VHS Hannover, Burgstr. 14
+Mehr Infos im [Kursprogramm der VHS Hannover](https://www.vhs-hannover.de/vhs-programm/digital/betriebssysteme-und-netzwerke/kurs/Linux-Erlebnistag-Hannover-Freiheit-fuer-deinen-Computer/252KP54001)
+
+
 # {{ page.title }}
 
 Die Linux User Group (LUG) Hannover existiert seit März 1993 als ein loser 
