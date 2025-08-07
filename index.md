@@ -11,6 +11,7 @@ Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Prof
 
 **Wann?** 20. September 2025, VHS Hannover, Burgstr. 14
 
+![Image]({{ site.baseurl }}/img/LinuxErlebnistagFlyer.png)
 
 # {{ page.title }}
 
