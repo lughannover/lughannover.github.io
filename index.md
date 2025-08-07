@@ -9,7 +9,8 @@ permalink: /
 
 Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Profi bist – beim [Linux-Erlebnistag Hannover](https://www.vhs-hannover.de/vhs-programm/digital/betriebssysteme-und-netzwerke/kurs/Linux-Erlebnistag-Hannover-Freiheit-fuer-deinen-Computer/252KP54001) kannst du ausprobieren, lernen und die LUG Hannover treffen.
 
-**Wann?** Samstag, 20. September 2025 | **Wo?**   VHS Hannover, Burgstr. 14
+**Wann?** Samstag, 20. September 2025 <br />
+**Wo?**   VHS Hannover, Burgstr. 14 <br />
 
 ![Image]({{ site.baseurl }}/img/LinuxErlebnistagFlyer.png)
 
