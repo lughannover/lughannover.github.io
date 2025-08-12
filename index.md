@@ -4,7 +4,7 @@ title: Wer wir sind
 permalink: /
 ---
 
-# Linux-Erlebnistag Hannover
+# Linux-Erlebnistag Hannover 2025
 ## Freiheit für deinen Computer! Privatsphäre für dich.
 
 Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Profi bist – beim [Linux-Erlebnistag Hannover](https://www.vhs-hannover.de/vhs-programm/digital/betriebssysteme-und-netzwerke/kurs/Linux-Erlebnistag-Hannover-Freiheit-fuer-deinen-Computer/252KP54001) kannst du ausprobieren, lernen und die LUG Hannover treffen.
