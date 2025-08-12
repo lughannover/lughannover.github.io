@@ -4,8 +4,6 @@ layout: page
 permalink: /gruende/
 ---
 
-## Freiheit für deinen Computer! Privatsphäre für dich. 7 starke Gründe für deinen Wechsel zu Linux
-
 Windows kennt jeder – Linux leider viel zu wenige. Dabei ist es längst überall: in Smartphones, Autos, Fernsehern, Routern, Supercomputern und auf den Servern, die das Internet am Laufen halten. Nur auf dem Desktop wird es leider völlig unterschätzt.
 
 Hier sind 7 Gründe, warum du am besten noch heute umsteigen solltest:
