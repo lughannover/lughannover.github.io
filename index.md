@@ -4,6 +4,7 @@ title: Wer wir sind
 permalink: /
 ---
 
+<!--
 # Linux-Erlebnistag Hannover 2025
 ## Freiheit für deinen Computer! Privatsphäre für dich.
 
@@ -13,6 +14,7 @@ Entdecke die Welt von Linux und Open Source! Egal, ob du Einsteiger*in oder Prof
 **Wo?**   VHS Hannover, Burgstr. 14 <br />
 
 ![Image]({{ site.baseurl }}/img/LinuxErlebnistagFlyer.png)
+-->
 
 # {{ page.title }}
 
