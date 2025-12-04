@@ -11,29 +11,32 @@
       <div class="wrapper">
         {{ content }}
         
-        <script type="text/javascript" language="javascript"><!--
-function lugh(a,t,c,d,m) {
- t = a || new Date();                           // Datum übernehmen
- t.setDate(1);                                  // Erster Tag im Monat
+<script type="text/javascript" language="javascript"><!--
+function lugh(t,i,m,e) {
+ t = t || new Date();                           // Datum übernehmen oder aktuelle Zeit
  t.setMinutes(0);                               // Minuten auf 0
- t.setHours(21);                                // Stunden auf 21              
- t.setDate(d = (10-t.getDay())%7+1);            // Erster Mittwoch im Monat
- m = t.getMonth();                              // Monat ermitteln
- c = m * 10 + d % 8;                            // Tag und Monat kombinieren
- if(c < 8 || c == 41 || c == 93)                // Erster Mittwoch ein Feiertag?
-  t.setDate(d + 7);                             // Eine Woche dazu rechnen
- if(!a && t.getTime() < new Date().getTime()) { // Termin schon verstrichen?
-  t.setDate(1);                                 // Datum wieder auf den 1.
-  if(!(c = ++m % 12))                           // Nächster Monat
-   t.setFullYear(t.getFullYear() + 1);          // Nächstes Jahr setzen
-  t.setMonth(c);                                // Monat setzen
-  t = lugh(t);                                  // Nächsten Termin berechnen
+ t.setHours(21);                                // Stunden auf 21
+ do {                                           // Pflicht-Schleife
+  t.setDate(1);                                 // Erster Tag im Monat
+  t.setDate(e = (10 - t.getDay()) % 7 + 1);     // Erster Mittwoch im Monat
+  m = m || t.getMonth();                        // Aktuellen Monat ermitteln
+  i = m * 10 + e % 8;                           // Tag und Monat kombinieren
+  if(i == 1 || i == 41 || i == 93)               // Erster Mittwoch ein Feiertag?
+   t.setDate(e + 7);                            // Eine Woche dazu rechnen
+  if(t.getTime() < new Date().getTime()) {      // Termin schon verstrichen?
+   if(!(m = ++m % 12))                          // Nächster Monat
+    t.setFullYear(t.getFullYear() + 1);         // Bei Jahresende: Nächstes Jahr setzen
+   t.setMonth(m);                               // Neuen Monat setzen
+   e = 0;                                       // Nächsten Termin berechnen
+  }
  }
- return t;                                      // Date-Object zurückgeben
+ while(!e);                                     // Auf Schleife Prüfen
+ return t;                                      // Termin mit Date-Object zurückgeben
 }
-var t = lugh();    // t.toLocaleDateString() würde reichen
-// document.write("<p>Nächstes Treffen: <b>Mittwoch, den 07. Februar 2024</p>"); 
-document.write("<p>Nächstes Treffen: <b>Mittwoch, den " + t.getDate() + ". " + "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(",")[t.getMonth()] + " " + t.getFullYear() + ", 19 Uhr.<\/b><\/p>");
+var t = lugh();                                 // Nächsten LUGH-Termin Berechnen
+console.log(t.toLocaleDateString());            // DEBUG: Lokales Datum für die Console
+t = ["Mittwoch",t.getDate(),"Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(",")[t.getMonth()],t.getFullYear(),19];
+document.write("<p>Nächstes Treffen: <b>!, den !. ! !, ! Uhr.<\/b><\/p>".replace(/!/g,function(){return t.shift()}));
 //--></script>
         <noscript>
         <p class="lughdate"><em>Sollte hier kein Termin oder nur Kauderwelsch stehen, dann <a href="https://freeshell.de/~lughvr/einladung.cgi">klick bitte auf unsere Einladung!</a><br></em> 
