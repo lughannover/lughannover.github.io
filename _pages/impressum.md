@@ -11,12 +11,9 @@ permalink: /impressum/
 Verantwortlich im Sinne der Datenschutz-Grundverordnung (EU-DSGVO) und sonstiger datenschutzrechtlicher Bestimmungen ist:
 
 
-Karsten      | Horsmann
+Michael    | Engelke
 :----------- | :-------------- 
-Lübecker Str | 12         
-30974        | Wennigsen 
-Mail:        | khorsmann+lugh <ät> gmail \<dot> com  
-Hinweis      | Das <ät> durch den Klammeraffen ersetzen, den \<dot> zum Punkt. khorsmann+lugh ist wirklich korrekt.
+
 
 Diese Daten dienen der Kontaktaufnahme bei technischen Problemen mit der Seite. Aufgrund der begrenzten Zeit kann keine Linux-Fernadministration geleistet werden. 
 
