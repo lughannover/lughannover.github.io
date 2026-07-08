@@ -13,25 +13,26 @@
         
 <script type="text/javascript" language="javascript"><!--
 function lugh(t,i,m,e) {
- t = t || new Date();                           // Datum übernehmen oder aktuelle Zeit
- t.setMinutes(0);                               // Minuten auf 0
- t.setHours(21);                                // Stunden auf 21
- do {                                           // Pflicht-Schleife
-  t.setDate(1);                                 // Erster Tag im Monat
-  t.setDate(e = (10 - t.getDay()) % 7 + 1);     // Erster Mittwoch im Monat
-  m = m || t.getMonth();                        // Aktuellen Monat ermitteln
-  i = m * 10 + e % 8;                           // Tag und Monat kombinieren
-  if(i == 1 || i == 41 || i == 93)               // Erster Mittwoch ein Feiertag?
-   t.setDate(e + 7);                            // Eine Woche dazu rechnen
-  if(t.getTime() < new Date().getTime()) {      // Termin schon verstrichen?
-   if(!(m = ++m % 12))                          // Nächster Monat
-    t.setFullYear(t.getFullYear() + 1);         // Bei Jahresende: Nächstes Jahr setzen
-   t.setMonth(m);                               // Neuen Monat setzen
-   e = 0;                                       // Nächsten Termin berechnen
+ t = t || new Date();                                // Datum übernehmen oder aktuelle Zeit
+ t.setMinutes(0);                                    // Minuten auf 0
+ t.setHours(21);                                     // Stunden auf 21
+ do {                                                // Pflicht-Schleife
+  t.setDate(1);                                      // Erster Tag im Monat
+  m = m || t.getMonth();                             // Aktuellen Monat übernehmen oder ermitteln
+  e = (10 - t.getDay()) % 7 + 1;                     // Erster Mittwoch im Monat
+  i = m * 10 + e % 8;                                // Tag und Monat kombinieren
+  if(!m && e < 7 - t.getDay() || i == 41 || i == 93) // Auf Semesterferien oder Feiertage prüfen
+   e += 7;                                           // Eine Woche dazu rechnen
+  t.setDate(e);                                      // Tag setzen
+  if(t.getTime() < new Date().getTime()) {           // Termin schon verstrichen?
+   if(!(m = ++m % 12))                               // Nächster Monat
+    t.setFullYear(t.getFullYear() + 1);              // Bei Jahresende: Nächstes Jahr setzen
+   t.setMonth(m);                                    // Neuen Monat setzen
+   e = 0;                                            // Nächsten Termin berechnen
   }
  }
- while(!e);                                     // Auf Schleife Prüfen
- return t;                                      // Termin mit Date-Object zurückgeben
+ while(!e);                                          // Auf Schleife Prüfen
+ return t;                                           // Termin mit Date-Object zurückgeben
 }
 var t = lugh();                                 // Nächsten LUGH-Termin Berechnen
 console.log(t.toLocaleDateString());            // DEBUG: Lokales Datum für die Console
