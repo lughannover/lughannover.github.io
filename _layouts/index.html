@@ -7,6 +7,195 @@
 
     {% include header.html %}
 
+    <!-- BEGINN DES TEASERS -->
+<div class="linux-event-teaser">
+    <div class="teaser-badge">Eintritt frei • Open Space</div>
+    
+    <h2 class="teaser-title">Linux-Erlebnistag Hannover</h2>
+    
+    <div class="teaser-meta-grid">
+        <div class="meta-item">
+            <span class="meta-icon">📅</span>
+            <div class="meta-text">
+                <strong>Samstag, 19. September 2026</strong>
+                <span>10:00 – 16:00 Uhr</span>
+            </div>
+        </div>
+        <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <div class="meta-text">
+                <strong>VHS Hannover (Foyer)</strong>
+                <span>LUGH-Beratung ab 11 Uhr</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="teaser-content">
+        <div class="teaser-lead">
+            <p><strong>Computer zu alt für Windows?</strong> Warum wegwerfen, wenn es mit Linux eine sichere, schnelle und nachhaltige Alternative gibt?</p>
+            <p>Beim Linux-Erlebnistag zeigt dir die <em>Linux User Group Hannover (LUGH)</em>, wie du deinem PC neues Leben einhauchst – alltagstauglich, ohne Vorkenntnisse und völlig unabhängig.</p>
+        </div>
+        
+        <div class="teaser-features">
+            <div class="feature-tag">
+                <strong>💡 Live erleben & Mitbringen</strong>
+                Probier Linux vor Ort aus oder bring dein eigenes Gerät zur Installation mit!
+            </div>
+            <div class="feature-tag">
+                <strong>🛡️ Digitale Selbstverteidigung</strong>
+                Ohne Konto- oder KI-Zwang, ohne Popups. Voller Schutz deiner Privatsphäre.
+            </div>
+            <div class="feature-tag">
+                <strong>🎮 Gaming & Mehr</strong>
+                Entdecke Gaming via Steam, SuperTuxKart oder Windows in der VM.
+            </div>
+        </div>
+    </div>
+
+    <div class="teaser-footer">
+        <div class="footer-note">
+            Komm einfach vorbei, wann es dir passt. Die Experten der LUGH helfen dir gerne weiter!
+        </div>
+        <a href="https://www.vhs-hannover.de/vhs-programm/ausstellungen-vortraege-veranstaltungen/veranstaltungen/linux-erlebnistag-hannover-1" class="teaser-cta" target="_blank" rel="noopener">
+            Jetzt Details ansehen
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33334 8H12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33334L12.6667 8L8 12.6667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</div>
+
+<style>
+    :root {
+        --bg-dark: #0f172a;
+        --bg-card: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #38bdf8;
+        --primary-hover: #0ea5e9;
+        --accent: #f59e0b;
+        --accent-bg: rgba(245, 158, 11, 0.1);
+        --border: #334155;
+    }
+
+    .linux-event-teaser {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, var(--bg-dark) 0%, #1e1b4b 100%);
+        color: var(--text-main);
+        padding: 2.5rem;
+        border-radius: 16px;
+        max-width: 850px;
+        margin: 2rem auto;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .linux-event-teaser * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .teaser-badge {
+        display: inline-block;
+        background: var(--accent-bg);
+        color: var(--accent);
+        padding: 0.35rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .teaser-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.2;
+        background: linear-gradient(to right, #ffffff, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+    }
+
+    .teaser-meta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        background: rgba(30, 41, 59, 0.7);
+        padding: 1.25rem;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        margin-bottom: 2rem;
+    }
+
+    .meta-item { display: flex; align-items: center; gap: 0.75rem; }
+    .meta-icon { font-size: 1.5rem; color: var(--primary); }
+    .meta-text strong { display: block; font-size: 0.95rem; color: var(--text-main); }
+    .meta-text span { font-size: 0.85rem; color: var(--text-muted); }
+
+    .teaser-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 650px) {
+        .teaser-content { grid-template-columns: 1.2fr 1fr; gap: 2rem; }
+    }
+
+    .teaser-lead { font-size: 1.1rem; line-height: 1.6; color: #e2e8f0; }
+    .teaser-lead p { margin-bottom: 1rem; }
+
+    .teaser-features { display: flex; flex-direction: column; gap: 0.75rem; }
+    .feature-tag {
+        background: rgba(51, 65, 85, 0.5);
+        border-left: 4px solid var(--primary);
+        padding: 0.75rem 1rem;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+    }
+    .feature-tag strong { color: var(--primary); display: block; margin-bottom: 0.15rem; }
+
+    .teaser-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+    }
+
+    @media (min-width: 600px) { .teaser-footer { flex-direction: row; } }
+
+    .footer-note { font-size: 0.9rem; color: var(--text-muted); max-width: 350px; }
+    
+    .teaser-cta {
+        display: inline-flex;
+        align-items: center;
+        background: var(--primary);
+        color: #0f172a;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 0.85rem 1.75rem;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .teaser-cta:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+    }
+    .teaser-cta svg { margin-left: 0.5rem; transition: transform 0.2s ease; }
+    .teaser-cta:hover svg { transform: translateX(4px); }
+</style>
+<!-- ENDE DES TEASERS -->
+    
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
